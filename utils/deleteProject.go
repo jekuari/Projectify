@@ -34,7 +34,8 @@ func DeleteProject(which string) {
 		return
 	}
 
-	projectsFileContent = strings.Replace(projectsFileContent, fmt.Sprintf("%s,%s\n", which, dir), "", -1)
+	deleteString := fmt.Sprintf("%s,%s\n", which, dir)
+	projectsFileContent = strings.Replace(projectsFileContent, deleteString, "", -1)
 	err = os.WriteFile(projectsFilePath, []byte(projectsFileContent), 0755)
 	if err != nil {
 		fmt.Println("Error deleting project", err)

@@ -17,7 +17,7 @@ func main() {
 		u.ListProjects()
 	case "d":
 		which := args[2]
-		fmt.Println("Delete", which)
+		u.DeleteProject(which)
 	case "o":
 		which := args[2]
 		u.OpenProject(which)
